@@ -26,7 +26,7 @@ namespace Mixin.Language
         /// <summary>
         /// 
         /// </summary>
-        public string GetTextFromLanguage()
+        public string GetText()
         {
             try
             {

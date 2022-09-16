@@ -66,7 +66,7 @@ namespace Mixin.Language
 
         private string GetTextFromLanguage()
         {
-            return _languageFile.GetTextFromLanguage();
+            return _languageFile.GetText();
         }
 
         private void OnValidate()

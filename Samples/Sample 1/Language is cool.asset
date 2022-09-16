@@ -10,12 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 065124708552ba1449321fd81d9843d3, type: 3}
-  m_Name: Test 2
+  m_Name: Language is cool
   m_EditorClassIdentifier: 
   _languageBlockList:
   - _language: 1
     _text: English is very cool
   - _language: 0
-    _text: '<color=green>German juhu!
-
-      This package is nice'
+    _text: <color=green>Deutsch juhu!

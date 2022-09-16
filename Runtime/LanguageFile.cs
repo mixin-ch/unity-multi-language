@@ -22,11 +22,6 @@ namespace Mixin.Language
         public List<LanguageBlock> LanguageBlockList { get => _languageBlockList; }
 
         /// <inheritdoc cref="LanguageManager.SelectedLanguage"/>
-        Language _selectedLanguage;
-
-        private void OnEnable()
-        {
-        }
 
         /// <summary>
         /// 
@@ -35,19 +30,27 @@ namespace Mixin.Language
         {
             try
             {
-                _selectedLanguage = LanguageManager.Instance.SelectedLanguage;
+                string text = null;
+                string fallbackText = null;
+                Language selectedLanguage = LanguageManager.Instance.SelectedLanguage;
+                Language fallbackLanguage = LanguageManager.Instance.FallbackLanguage;
 
                 // Cycle through all language blocks and search for the current selected language
                 foreach (LanguageBlock language in _languageBlockList)
                 {
-                    if (language.Language == _selectedLanguage)
-                        return language.Text;
+                    // Get selected language text
+                    if (language.Language == selectedLanguage)
+                        text = language.Text;
+
+                    // Get fallback text
+                    if (language.Language == fallbackLanguage)
+                        fallbackText = language.Text;
                 }
 
                 // If there is no matching language, it will return null
-                return null;
+                return text ?? fallbackText;
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 $"Could not get text from language file: {e}".LogWarning();
                 return null;

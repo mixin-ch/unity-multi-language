@@ -10,6 +10,7 @@ namespace Mixin.Language
     /// <summary>
     /// 
     /// </summary>
+    [ExecuteInEditMode]
     public class LanguageManager : Singleton<LanguageManager>
     {
         /// <summary>
@@ -17,8 +18,16 @@ namespace Mixin.Language
         /// </summary>
         [SerializeField] Language _selectedLanguage = Language.EN;
 
+        /// <summary>
+        /// Use this language if the selected language value is empty.
+        /// </summary>
+        [SerializeField] Language _fallbackLanguage = Language.EN;
+
         /// <inheritdoc cref="_selectedLanguage"/>
         public Language SelectedLanguage { get => _selectedLanguage; set => _selectedLanguage = value; }
+
+        /// <inheritdoc cref="_fallbackLanguage"/>
+        public Language FallbackLanguage { get => _fallbackLanguage; set => _fallbackLanguage = value; }
 
         /// <summary>
         /// 

@@ -14,17 +14,17 @@ namespace Mixin.Language
     public class LanguageText : MonoBehaviour
     {
         /// <summary>
-        /// 
+        /// The language file (scriptable object).
         /// </summary>
         [SerializeField] LanguageFile _languageFile;
 
         /// <summary>
-        /// 
+        /// Enable to manually define a text field that should be updated.
         /// </summary>
         [SerializeField] bool _useCustomTextField = false;
 
         /// <summary>
-        /// 
+        /// The custom text field that will be updated when "_useCustomTextField" is enabled.
         /// </summary>
         [ConditionalField("_useCustomTextField", true)]
         [SerializeField] TMP_Text _customTextField;
@@ -32,14 +32,9 @@ namespace Mixin.Language
         /********* *********/
 
         /// <summary>
-        /// 
+        /// The text field that will be updated.
         /// </summary>
         TMP_Text _textField;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        Language _selectedLanguage;
 
         private void Start()
         {

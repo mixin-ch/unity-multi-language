@@ -8,7 +8,7 @@ using System;
 namespace Mixin.Language
 {
     /// <summary>
-    /// 
+    /// This object manages the languages.
     /// </summary>
     [ExecuteInEditMode]
     public class LanguageManager : Singleton<LanguageManager>
@@ -30,12 +30,12 @@ namespace Mixin.Language
         public Language FallbackLanguage { get => _fallbackLanguage; set => _fallbackLanguage = value; }
 
         /// <summary>
-        /// 
+        /// Searches all language components and setups them.
         /// </summary>
         public void RefreshTexts()
         {
+            // Find all Language components.
             LanguageText[] languageText = FindObjectsOfType<LanguageText>();
-            $"found: {languageText.Length}".Log();
 
             foreach (LanguageText text in languageText)
             {

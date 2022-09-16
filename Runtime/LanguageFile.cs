@@ -8,21 +8,22 @@ using System;
 namespace Mixin.Language
 {
     /// <summary>
-    /// 
+    /// This is the scriptable object. 
+    /// Here you can type all individual language texts.
+    /// You can drag/drop this on the component.
     /// </summary>
     [CreateAssetMenu(fileName = "Language", menuName = "Mixin/Language file")]
     public class LanguageFile : ScriptableObject
     {
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <inheritdoc cref="Mixin.Language.LanguageBlock"/>
         [SerializeField] List<LanguageBlock> _languageBlockList;
 
         /// <inheritdoc cref="_languageBlockList"/>
         public List<LanguageBlock> LanguageBlockList { get => _languageBlockList; }
 
         /// <summary>
-        /// 
+        /// Get the text from the language defined in the Language Manager.
+        /// It also handles the fallback language.
         /// </summary>
         public string GetText()
         {

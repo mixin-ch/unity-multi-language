@@ -8,7 +8,7 @@ using System;
 namespace Mixin.Language
 {
     /// <summary>
-    /// 
+    /// It pairs the language with the belonging text.
     /// </summary>
     [System.Serializable]
     public class LanguageBlock

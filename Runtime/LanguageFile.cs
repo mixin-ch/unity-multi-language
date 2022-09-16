@@ -21,8 +21,6 @@ namespace Mixin.Language
         /// <inheritdoc cref="_languageBlockList"/>
         public List<LanguageBlock> LanguageBlockList { get => _languageBlockList; }
 
-        /// <inheritdoc cref="LanguageManager.SelectedLanguage"/>
-
         /// <summary>
         /// 
         /// </summary>

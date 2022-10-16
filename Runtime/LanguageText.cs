@@ -4,6 +4,7 @@ using UnityEngine;
 using Mixin.Utils;
 using TMPro;
 using System;
+using UnityEngine.Rendering;
 
 namespace Mixin.Language
 {
@@ -16,7 +17,7 @@ namespace Mixin.Language
         /// <summary>
         /// The language file (scriptable object).
         /// </summary>
-        [SerializeField] LanguageFile _languageFile;
+        [SerializeField] LanguageSO _languageFile;
 
         /// <summary>
         /// Enable to manually define a text field that should be updated.
@@ -54,7 +55,9 @@ namespace Mixin.Language
 
         private void UpdateText()
         {
-            if (_textField == null) return;
+            if (_textField == null ||
+                _languageFile == null)
+                return;
 
             _textField.text = GetTextFromLanguage();
         }

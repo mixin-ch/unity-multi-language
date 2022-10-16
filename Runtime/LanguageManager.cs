@@ -10,7 +10,7 @@ namespace Mixin.Language
     /// <summary>
     /// This object manages the languages.
     /// </summary>
-    [ExecuteInEditMode]
+    [ExecuteAlways]
     public class LanguageManager : Singleton<LanguageManager>
     {
         /// <summary>

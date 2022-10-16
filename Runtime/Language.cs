@@ -1,16 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using Mixin.Utils;
-using TMPro;
-using System;
-
-namespace Mixin.Language
+﻿namespace Mixin.Language
 {
-
     /// <summary>
     /// List of all languages.
     /// </summary>
+    [System.Serializable]
     public enum Language
     {
         EN = 1,

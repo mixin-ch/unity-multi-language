@@ -1,10 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using Mixin.Utils;
-using TMPro;
-using System;
-using UnityEditor;
 
 namespace Mixin.Language
 {
@@ -30,16 +25,20 @@ namespace Mixin.Language
         /// </summary>
         public string GetText()
         {
+            // Get selected and fallback language from the language manager.
             Language selectedLanguage = LanguageManager.Instance.SelectedLanguage;
             Language fallbackLanguage = LanguageManager.Instance.FallbackLanguage;
 
-            if (_languageTextList?[selectedLanguage] != null)
-                return _languageTextList?[selectedLanguage].Text;
+            // Return the selected language text if it exists.
+            if(_languageTextList.ContainsKey(selectedLanguage))
+                return _languageTextList[selectedLanguage].Text;
 
-            if (_languageTextList?[fallbackLanguage] != null)
-                return _languageTextList?[fallbackLanguage].Text;
+            // Return the fallback language text if selected language does not exist.
+            if (_languageTextList.ContainsKey(fallbackLanguage))
+                return _languageTextList[fallbackLanguage].Text;
 
-            return "<color=red>No text set";
+            // Return the name of the file, if selected and fallback text is missing.
+            return $"<color=orange><{name}>";
         }
 
         private void OnValidate()

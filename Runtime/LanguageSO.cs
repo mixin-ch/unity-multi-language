@@ -43,7 +43,7 @@ namespace Mixin.Language
 
         private void OnValidate()
         {
-            LanguageManager.Instance.RefreshTexts();
+            LanguageManager.Instance?.RefreshTexts();
         }
     }
 }

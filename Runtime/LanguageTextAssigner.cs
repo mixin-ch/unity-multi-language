@@ -12,12 +12,12 @@ namespace Mixin.Language
     /// The component to put on the object.
     /// </summary>
     [RequireComponent(typeof(TMP_Text))]
-    public class LanguageText : MonoBehaviour
+    public class LanguageTextAssigner : MonoBehaviour
     {
         /// <summary>
         /// The language file (scriptable object).
         /// </summary>
-        [SerializeField] LanguageSO _languageFile;
+        [SerializeField] LanguageTextSO _languageFile;
 
         /// <summary>
         /// Enable to manually define a text field that should be updated.

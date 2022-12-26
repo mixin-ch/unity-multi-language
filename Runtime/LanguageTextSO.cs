@@ -8,13 +8,14 @@ namespace Mixin.Language
     /// Here you can type all individual language texts.
     /// You can drag/drop this on the component.
     /// </summary>
-    [CreateAssetMenu(fileName = "Language", menuName = "Mixin/Language file")]
-    public class LanguageSO : ScriptableObject
+    [CreateAssetMenu(fileName = "LanguageText", menuName = "Mixin/Language Text File")]
+    public class LanguageTextSO : ScriptableObject
     {
         /// <summary>
         /// The dictionary that contains language text pairs
         /// </summary>
-        [SerializeField] MixinDictionary<Language, MultilineString> _languageTextList;
+        [SerializeField]
+        MixinDictionary<Language, MultilineString> _languageTextList;
 
         /// <inheritdoc cref="_languageTextList"/>
         public MixinDictionary<Language, MultilineString> LanguageTextList { get => _languageTextList; }
@@ -25,12 +26,15 @@ namespace Mixin.Language
         /// </summary>
         public string GetText()
         {
+            if (LanguageManager.Instance == null)
+                return $"<color=orange><LanguageManager is not set>";
+
             // Get selected and fallback language from the language manager.
             Language selectedLanguage = LanguageManager.Instance.SelectedLanguage;
             Language fallbackLanguage = LanguageManager.Instance.FallbackLanguage;
 
             // Return the selected language text if it exists.
-            if(_languageTextList.ContainsKey(selectedLanguage))
+            if (_languageTextList.ContainsKey(selectedLanguage))
                 return _languageTextList[selectedLanguage].Text;
 
             // Return the fallback language text if selected language does not exist.
@@ -43,7 +47,11 @@ namespace Mixin.Language
 
         private void OnValidate()
         {
-            LanguageManager.Instance?.RefreshTexts();
+            if (LanguageManager.Instance == null)
+                return;
+
+            if (LanguageManager.Instance.IsLiveRefreshEnabled())
+                LanguageManager.Instance?.RefreshTexts();
         }
     }
 }

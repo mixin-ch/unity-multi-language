@@ -1,7 +1,7 @@
 {
   "name": "com.mixin.unity-language",
   "version": "0.1",
-  "displayName": "Multi Language",
+  "displayName": "Mixin Multi Language",
   "description": "Easily translate your Game with Language Files.",
   "unity": "2021.1",
   "dependencies": {

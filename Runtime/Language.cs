@@ -1,4 +1,6 @@
-﻿namespace Mixin.Language
+﻿using UnityEngine;
+
+namespace Mixin.Language
 {
     /// <summary>
     /// List of all languages.
@@ -6,26 +8,26 @@
     [System.Serializable]
     public enum Language
     {
-        EN = 1, // English
-        DE = 0, // German
-        DE_CH = 2, // Swiss German
-        DE_AT = 18, // Austrian German
-        FR = 3, // French
-        IT = 9, // Italian
-        ZH = 4, // Chinease
-        ES = 5, // Spanish
-        RU = 6, // Russian
-        FI = 7, // Finnish
-        IS = 8, // Icelandic
-        JA = 10, // Japanese
-        KO = 11, // Korean
-        LA = 12, // Latin
-        NL = 13, // Dutch
-        NO = 14, // Norwegian
-        PL = 15, // Polish
-        PT = 16, // Portuguese
-        SV = 17, // Swedish
-        EN_GB = 19, // British English
+        English = 1, // English
+        German = 0, // German
+        SwissGerman = 2, // Swiss German
+        AustrianGerman = 18, // Austrian German
+        French = 3, // French
+        Italian = 9, // Italian
+        Chinease = 4, // Chinease
+        Spanish = 5, // Spanish
+        Russian = 6, // Russian
+        Finnish = 7, // Finnish
+        Icelandic = 8, // Icelandic
+        Japanese = 10, // Japanese
+        Korean = 11, // Korean
+        Latin = 12, // Latin
+        Dutch = 13, // Dutch
+        Norwegian = 14, // Norwegian
+        Polish = 15, // Polish
+        Portuguese = 16, // Portuguese
+        Swedish = 17, // Swedish
+        BritishEnglish = 19, // British English
     }
 }
 

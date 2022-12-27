@@ -235,7 +235,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c796b7c266039a4b80550ec49590791, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _refreshInEditor: 0
+  _liveRefresh: 1
   _selectedLanguage: 1
   _fallbackLanguage: 0
 --- !u!1 &1631822749

@@ -17,7 +17,7 @@ namespace Mixin.Language
         /// When enabled it refreshes all the Textes in Editor Mode.
         /// </summary>
         [SerializeField]
-        private bool _refreshInEditor;
+        private bool _liveRefresh;
 
         /// <summary>
         /// The current select language.
@@ -36,6 +36,7 @@ namespace Mixin.Language
 
         /// <inheritdoc cref="_fallbackLanguage"/>
         public Language FallbackLanguage { get => _fallbackLanguage; set => _fallbackLanguage = value; }
+        public bool LiveRefresh { get => _liveRefresh; }
 
         /// <summary>
         /// Searches all language components and setups them.
@@ -54,14 +55,14 @@ namespace Mixin.Language
             }
         }
 
-        public bool IsLiveRefreshEnabled()
+        public static SystemLanguage GetSystemLanguage()
         {
-            return _refreshInEditor && Application.isEditor;
+            return Application.systemLanguage;
         }
 
         private void OnValidate()
         {
-            if (IsLiveRefreshEnabled())
+            if (_liveRefresh)
                 RefreshTexts();
         }
     }

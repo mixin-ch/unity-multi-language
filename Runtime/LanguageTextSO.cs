@@ -50,7 +50,7 @@ namespace Mixin.Language
             if (LanguageManager.Instance == null)
                 return;
 
-            if (LanguageManager.Instance.IsLiveRefreshEnabled())
+            if (LanguageManager.Instance.LiveRefresh)
                 LanguageManager.Instance?.RefreshTexts();
         }
     }

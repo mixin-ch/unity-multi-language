@@ -69,7 +69,11 @@ namespace Mixin.Language
 
         private void OnValidate()
         {
-            Setup();
+            if (LanguageManager.Instance == null)
+                return;
+
+            if (LanguageManager.Instance.LiveRefresh)
+                Setup();
         }
     }
 }

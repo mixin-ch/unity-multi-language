@@ -5,7 +5,7 @@
   "description": "Easily translate your game with Language Files.",
   "unity": "2021.1",
   "dependencies": {
-    "com.mixin.unity-utils": "0.5.0"
+    "com.mixin.unity-mixin-utils": "0.5.0"
   },
   "keywords": [
     "mixin games",

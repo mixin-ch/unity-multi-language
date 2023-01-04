@@ -1,11 +1,11 @@
 {
-  "name": "com.mixin.unity-language",
-  "version": "0.2.0",
-  "displayName": "Mixin Multi Language",
-  "description": "Easily translate your Game with Language Files.",
+  "name": "com.mixin.unity-multi-language",
+  "version": "0.2.1",
+  "displayName": "Multi Language",
+  "description": "Easily translate your game with Language Files.",
   "unity": "2021.1",
   "dependencies": {
-    "com.mixin.unity-utils": "0.1.4"
+    "com.mixin.unity-utils": "0.5.0"
   },
   "keywords": [
     "mixin games",

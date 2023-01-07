@@ -5,7 +5,7 @@ using Mixin.Utils;
 using TMPro;
 using System;
 
-namespace Mixin.Language
+namespace Mixin.MultiLanguage
 {
     /// <summary>
     /// It pairs the language with the belonging text.

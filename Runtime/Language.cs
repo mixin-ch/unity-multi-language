@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Mixin.Language
+namespace Mixin.MultiLanguage
 {
     /// <summary>
     /// List of all languages.

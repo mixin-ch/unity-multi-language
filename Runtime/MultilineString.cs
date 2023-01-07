@@ -2,7 +2,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace Mixin.Language
+namespace Mixin.MultiLanguage
 {
     /// <summary>
     /// This class contains a normal Text property. <br></br>

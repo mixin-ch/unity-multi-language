@@ -6,7 +6,7 @@ using TMPro;
 using System;
 using UnityEngine.Rendering;
 
-namespace Mixin.Language
+namespace Mixin.MultiLanguage
 {
     /// <summary>
     /// The component to put on the object.

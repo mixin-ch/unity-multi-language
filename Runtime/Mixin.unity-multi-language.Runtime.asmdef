@@ -1,5 +1,5 @@
 {
-    "name": "Mixin.unity-language.Runtime",
+    "name": "Mixin.unity-multi-language.Runtime",
     "rootNamespace": "",
     "references": [
         "GUID:72360ac344346684e9e27a1a126f833a",

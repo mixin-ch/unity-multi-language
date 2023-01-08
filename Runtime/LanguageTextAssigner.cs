@@ -27,7 +27,9 @@ namespace Mixin.MultiLanguage
         /// <summary>
         /// The custom text field that will be updated when "_useCustomTextField" is enabled.
         /// </summary>
+#if UNITY_EDITOR
         [ConditionalField("_useCustomTextField", true)]
+#endif
         [SerializeField] TMP_Text _customTextField;
 
         /********* *********/

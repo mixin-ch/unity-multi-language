@@ -1,9 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using Mixin.Utils;
-using TMPro;
-using System;
 
 namespace Mixin.MultiLanguage
 {

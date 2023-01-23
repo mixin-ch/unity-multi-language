@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using Mixin.Utils;
+using System.Collections.Generic;
 
 namespace Mixin.MultiLanguage
 {
@@ -32,6 +33,11 @@ namespace Mixin.MultiLanguage
         /// </summary>
         public string GetText(bool replacePlaceholders = true)
         {
+            return GetText(replacePlaceholders, null);
+        }
+
+        private string GetText(bool replacePlaceholders, HashSet<LanguageTextSO> forbiddenPlaceholderSet)
+        {
             if (LanguageManager.Instance == null)
                 return $"<color=orange><LanguageManager is not set></color>";
 
@@ -50,7 +56,7 @@ namespace Mixin.MultiLanguage
                 text = _languageTextList[fallbackLanguage].Text;
 
             if (replacePlaceholders)
-                text = TryReplacePlaceholders(text);
+                text = TryReplacePlaceholders(text, forbiddenPlaceholderSet);
 
             // Return the text
             if (text != null)
@@ -64,9 +70,16 @@ namespace Mixin.MultiLanguage
         /// Replaces all placeholders with the refrenced texts.
         /// </summary>
         /// <param name="textWithPlaceholders"></param>
+        /// <param name="forbiddenPlaceholderSet">List of all LanguageTextSO not to be replaced.</param>
         /// <returns>Returns the same string if there are no placeholders</returns>
-        private string TryReplacePlaceholders(string textWithPlaceholders)
+        private string TryReplacePlaceholders(string textWithPlaceholders, HashSet<LanguageTextSO> forbiddenPlaceholderSet)
         {
+            if (forbiddenPlaceholderSet == null)
+                forbiddenPlaceholderSet = new HashSet<LanguageTextSO>();
+
+            // Add self to forbidden to prevent endless recursion.
+            forbiddenPlaceholderSet.Add(this);
+
             if (_placeholders == null ||
                 _placeholders.Length == 0)
                 return textWithPlaceholders;
@@ -74,11 +87,14 @@ namespace Mixin.MultiLanguage
             string replacedText = textWithPlaceholders;
             for (int i = 0; i < _placeholders.Length; i++)
             {
-                // Check if the placeholder is null
-                if (_placeholders[i] == null)
+                LanguageTextSO placeholder = _placeholders[i];
+
+                if (placeholder == null)
+                    continue;
+                if (forbiddenPlaceholderSet.Contains(placeholder))
                     continue;
 
-                replacedText = replacedText.Replace("{" + i + "}", _placeholders[i].GetText(true));
+                replacedText = replacedText.Replace("{" + i + "}", placeholder.GetText(true, new HashSet<LanguageTextSO>(forbiddenPlaceholderSet)));
             }
 
             return replacedText;

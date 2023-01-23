@@ -38,5 +38,8 @@ MonoBehaviour:
     _keyValues: 0100000000000000
     _keys: 0100000000000000
     _values:
-    - Text: Mixin Games English
-    - Text: Mixin Games Deutsch
+    - Text: Mixin Games English {0} {1}
+    - Text: Mixin Games Deutsch {0} {1}
+  _placeholders:
+  - {fileID: 11400000, guid: d4091ae3a2911404399e5fa351ae0b8d, type: 2}
+  - {fileID: 11400000, guid: d0c737d6e9b65694995f8e235b329cad, type: 2}

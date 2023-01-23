@@ -1,8 +1,12 @@
 {
-    "name": "Mixin.[packagename].Editor",
+    "name": "Mixin.unity-multi-language.Editor",
     "rootNamespace": "",
-    "references": [],
-    "includePlatforms": [],
+    "references": [
+        "GUID:6b84f7a92a924ef4394762e4c5b593d7"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,

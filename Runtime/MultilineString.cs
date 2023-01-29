@@ -1,6 +1,4 @@
 ﻿using System;
-using UnityEditor;
-using UnityEngine;
 
 namespace Mixin.MultiLanguage
 {
@@ -9,7 +7,7 @@ namespace Mixin.MultiLanguage
     /// But the inspector shows a custom drawer which has 100f height and 100% width.
     /// </summary>
     [Serializable]
-    public class MultilineString
+    public struct MultilineString
     {
         public string Text;
     }

@@ -16,7 +16,7 @@ namespace Mixin.MultiLanguage
         /// The dictionary that contains language text pairs
         /// </summary>
         [SerializeField]
-        MixinDictionary<Language, MultilineString> _languageTextList;
+        private MixinDictionary<Language, MultilineString> _languageTextList;
 
         /// <summary>
         /// Refrence to other Lanuage Files to replace the placeholders.
@@ -107,6 +107,28 @@ namespace Mixin.MultiLanguage
 
             if (LanguageManager.Instance.LiveRefresh)
                 LanguageManager.Instance?.RefreshTexts();
+        }
+
+        public static LanguageTextSO Create(
+            MixinDictionary<Language, MultilineString> languageTextList,
+            LanguageTextSO[] placeholders)
+        {
+            LanguageTextSO languageTextSO = CreateInstance<LanguageTextSO>();
+            languageTextSO._languageTextList = languageTextList;
+            languageTextSO._placeholders = placeholders;
+
+            return languageTextSO;
+        }
+
+        public static LanguageTextSO Create(
+            MixinDictionary<Language, MultilineString> languageTextList,
+            List<LanguageTextSO> placeholders)
+        {
+            LanguageTextSO languageTextSO = CreateInstance<LanguageTextSO>();
+            languageTextSO._languageTextList = languageTextList;
+            languageTextSO._placeholders = placeholders.ToArray();
+
+            return languageTextSO;
         }
     }
 }

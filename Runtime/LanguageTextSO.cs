@@ -124,11 +124,7 @@ namespace Mixin.MultiLanguage
             MixinDictionary<Language, MultilineString> languageTextList,
             List<LanguageTextSO> placeholders)
         {
-            LanguageTextSO languageTextSO = CreateInstance<LanguageTextSO>();
-            languageTextSO._languageTextList = languageTextList;
-            languageTextSO._placeholders = placeholders.ToArray();
-
-            return languageTextSO;
+            return Create(languageTextList, placeholders.ToArray());
         }
     }
 }

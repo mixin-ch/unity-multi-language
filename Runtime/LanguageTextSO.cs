@@ -25,7 +25,7 @@ namespace Mixin.MultiLanguage
         private LanguageTextSO[] _placeholders;
 
         /// <inheritdoc cref="_languageTextList"/>
-        public MixinDictionary<Language, MultilineString> LanguageTextList { get => _languageTextList; }
+        public MixinDictionary<Language, MultilineString> LanguageTextList { get => _languageTextList.Copy(); }
 
         /// <summary>
         /// Get the text from the language defined in the Language Manager.

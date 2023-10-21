@@ -1,6 +1,6 @@
-﻿using UnityEngine;
-using Mixin.Utils;
+﻿using Mixin.Utils;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace Mixin.MultiLanguage
 {
@@ -52,10 +52,10 @@ namespace Mixin.MultiLanguage
                 text = _languageTextList[selectedLanguage].Text;
 
             // Set the fallback language text if selected language does not exist.
-            if (_languageTextList.ContainsKey(fallbackLanguage))
+            if (text == null && _languageTextList.ContainsKey(fallbackLanguage))
                 text = _languageTextList[fallbackLanguage].Text;
 
-            if (replacePlaceholders)
+            if (text != null && replacePlaceholders)
                 text = TryReplacePlaceholders(text, forbiddenPlaceholderSet);
 
             // Return the text
